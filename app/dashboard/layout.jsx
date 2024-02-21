@@ -3,7 +3,6 @@ import { checkUserRole } from "@lib/auth"
 
 async function layout({ admin, user, responsible }) {
   const role = await checkUserRole()
-
   return <>{
     role === 'admin'
       ? admin
