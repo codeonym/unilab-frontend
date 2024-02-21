@@ -1,0 +1,1 @@
+context folder to store globally shared states for the client side and avoiding the props drilling 

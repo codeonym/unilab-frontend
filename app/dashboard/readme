@@ -1,0 +1,2 @@
+this is the unified dashboard page, we can set here some shared layout for all types of users.
+the layout.jsx calls the auth.jsx function and determines the role of the user to render the respected dashboard
