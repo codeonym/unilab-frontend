@@ -2,7 +2,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div>rubric page</div>
+    <div> materials page</div>
   )
 }
 

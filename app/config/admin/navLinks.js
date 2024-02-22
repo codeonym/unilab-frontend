@@ -20,7 +20,7 @@ export const navLinks = [
       },
       {
         title: "Personnes",
-        href: "/dashboard/management/people",
+        href: "/dashboard/management/users",
       },
       {
         title: "Matériels",
@@ -38,8 +38,8 @@ export const navLinks = [
     icon: <MdSettings />,
   },
   {
-    title: "Structures",
-    href: "/dashboard/structures",
+    title: "laboratoires",
+    href: "/dashboard/laboratories",
     icon: <MdBusiness />,
   },
   {
