@@ -16,22 +16,24 @@ const DashboardSidebar = () => {
     <aside
       className={cn(
         `
-      relative
+      fixed
+      z-50
+      bg-inherit
+      sm:relative
       box-border
       transition-all
       duration-300
       min-h-screen
-      border-r-2
-      border-slate-50
+      shadow
           `,
         sidebarOpen
           ? "w-0"
-          : "w-80"
+          : "w-full sm:w-80"
       )}>
       <label
         className="
         btn 
-        z-20
+        z-10
         text-slate-500 
         btn-ghost
         hover:bg-transparent
@@ -40,7 +42,7 @@ const DashboardSidebar = () => {
         swap-rotate 
         absolute 
         top-2
-        left-full"
+        sm:left-full"
       >
 
         {/* this hidden checkbox controls the state */}
@@ -57,8 +59,8 @@ const DashboardSidebar = () => {
         max-h-screen
         overflow-y-auto
         scrollbar-thin 
-        scrollbar-thumb-slate-200 
-        scrollbar-track-slate-100
+        scrollbar-thumb-base-300 
+        scrollbar-track-base-200
         scrollbar-rounded-md
       text-slate-500
         flex-shrink-0
@@ -68,6 +70,7 @@ const DashboardSidebar = () => {
         <div
           className="
             pt-16
+            pb-8
             flex
             items-center
             flex-col
@@ -78,33 +81,35 @@ const DashboardSidebar = () => {
             src="/assets/images/logo.png"
             alt="Logo"
             width={120}
-            height={30}
+            height={24}
             className="" />
         </div>
 
-        <div className="divider"></div> 
+        <div className="divider">Menu</div>
 
         {/* Sidebar Links */}
-        <nav className="p-4 mt-12">
+        <nav className="p-4">
           <ul className="menu w-full space-y-2 rounded-box">
             {
               navLinks && navLinks.map((navLink, idx) => (
                 <li
                   key={idx}
                 >
-                  <NavLink bgColor="bg-slate-300" href={navLink.href}
-                    className="flex items-center p-2 font-bold hover:bg-slate-200 rounded gap-2">
+                  <NavLink bgColor="bg-slate-600 text-white" href={navLink.href}
+                    className="flex items-center p-3 font-normal text-base hover:bg-slate-600 hover:text-white rounded gap-2">
                     {navLink.icon}
                     {navLink.title}
                   </NavLink>
                   {navLink?.subMenu && (
-                    <ul>
-                      {navLink.subMenu.map((subLink,idx) => (
+                    <ul
+                      className='space-y-1 mt-2'
+                    >
+                      {navLink.subMenu.map((subLink, idx) => (
                         <li
                           key={idx}
                         >
-                          <NavLink bgColor="bg-slate-300" href={subLink.href}
-                            className="flex items-center p-2 font-bold hover:bg-slate-200 rounded gap-2">
+                          <NavLink bgColor="bg-slate-600 text-white" href={subLink.href}
+                            className="flex items-center p-3 font-normal hover:bg-slate-600 hover:text-white rounded gap-2">
                             {subLink.title}
                           </NavLink>
                         </li>
