@@ -16,3 +16,12 @@ export const updateRubricAction = async (formData) => {
 
   return { ok: true, message: "Rubric updated successfully" };
 }
+
+
+export const deleteRubricAction = async (id) => {
+
+  console.log(id);
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  return { ok: true, message: "Rubric deleted successfully" };
+}

@@ -1,14 +1,16 @@
-import { MdStore, MdShoppingCart } from 'react-icons/md'
+import { singleLinks } from './singleLinks'
 
 export const exportLinks = [
   {
-    title: "produits",
-    href: "/dashboard/export?q=products",
-    icon: <MdShoppingCart />
+    ...singleLinks.consumables,
+    href: singleLinks.consumables.href + "/export",
   },
   {
-    title: "laboratoires",
-    href: "/dashboard/export?q=laboratoires",
-    icon: <MdStore />
+    ...singleLinks.materials,
+    href: singleLinks.materials.href + "/export",
+  },
+  {
+    ...singleLinks.laboratories,
+    href: singleLinks.laboratories.href + "/export",
   }
 ]

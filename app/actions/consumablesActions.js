@@ -16,3 +16,12 @@ export const updateConsumableAction = async (formData) => {
 
   return { ok: true, message: "Consumable updated successfully" };
 }
+
+
+export const deleteConsumableAction = async (id) => {
+
+  console.log(id);
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  return { ok: true, message: "Consumable deleted successfully" };
+}

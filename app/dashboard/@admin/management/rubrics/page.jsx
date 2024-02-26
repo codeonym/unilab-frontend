@@ -3,7 +3,7 @@ import SectionHeader from '@dashboard/@admin/components/SectionHeader';
 import TableContainer from "@dashboard/@admin/components/TableContainer";
 import { FaCoins } from "react-icons/fa"
 import { rubricCols, rubricActions } from '@config/data-control/rubric';
-import ConsummationBar from "./ConsummationBar"
+import ConsummationBar from "@dashboard/@admin/components/ConsummationBar"
 
 const fetchData = async () => {
 

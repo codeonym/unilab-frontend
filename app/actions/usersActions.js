@@ -16,3 +16,12 @@ export const updateUserAction = async (formData) => {
 
   return { ok: true, message: "User updated successfully" };
 }
+
+
+export const deleteUserAction = async (id) => {
+
+  console.log(id);
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  return { ok: true, message: "User deleted successfully" };
+}

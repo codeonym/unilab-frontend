@@ -7,7 +7,7 @@ function page() {
   return (
     <section className="p-4 container mx-auto">
       <SectionHeader
-        title={"Nouveau rubric"}
+        title={"Nouveau rubrique"}
         icon={<FaCoins />}
         description={"Ajouter des nouveaux rubriques facilement!"}
       />

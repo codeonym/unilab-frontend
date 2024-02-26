@@ -18,7 +18,7 @@ async function page({ params }) {
   return (
     <section className="p-4 container mx-auto">
       <SectionHeader
-        title={"Mettre à rubric"}
+        title={"Mettre à jour rubrique"}
         icon={<FaCoins />}
         description={"Mettre à jour vos rubriques facilement!"}
       />

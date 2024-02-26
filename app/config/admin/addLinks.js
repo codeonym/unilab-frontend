@@ -1,29 +1,11 @@
-import { MdStore, MdPerson, MdLaptop, MdShoppingCart } from 'react-icons/md'
-import { FaCoins } from "react-icons/fa"
+import { singleLinks } from './singleLinks'
 export const addLinks = [
-  {
-    title: "Rubrique",
-    href: "/dashboard/management/rubrics/new",
-    icon: <FaCoins />
-  },
-  {
-    title: "Fournisseur",
-    href: "/dashboard/management/suppliers/new",
-    icon: <MdStore />
-  },
-  {
-    title: "Personne",
-    href: "/dashboard/management/users/new",
-    icon: <MdPerson />
-  },
-  {
-    title: "Matériel",
-    href: "/dashboard/management/materials/new",
-    icon: <MdLaptop />
-  },
-  {
-    title: "Consommable",
-    href: "/dashboard/management/consumables/new",
-    icon: <MdShoppingCart />
-  }
-]
+  singleLinks.rubrics,
+  singleLinks.suppliers,
+  singleLinks.users,
+  singleLinks.materials,
+  singleLinks.consumables
+].map(link => ({
+  ...link,
+  href: link.href+ "/new"
+}))
