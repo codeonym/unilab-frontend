@@ -6,5 +6,5 @@ export const checkUserRole = async () => {
    */
   // for now it is hard coded
   //logic to be added here
-  return 'admin'
+  return 'responsible'
 }

@@ -1,8 +1,11 @@
 import React from 'react'
+import Orders from './components/Orders'
 
 function page() {
   return (
-    <div>responsible page</div>
+    <div>
+      <Orders/>
+    </div>
   )
 }
 
