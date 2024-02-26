@@ -19,26 +19,28 @@ function UserBox() {
   }
   return (
     <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar hover:bg-slate-100">
-        <div className="w-10 rounded-full">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar hover:bg-base-200">
           {data?.user?.image != null
             ? (
-              <Image
-                height={37}
-                width={37}
-                alt={"A"}
-                src={data?.user.image}
-              />
+              <div className="w-10 rounded-full">
+                <Image
+                  height={37}
+                  width={37}
+                  alt={"A"}
+                  src={data?.user.image}
+                  />
+              </div>
             )
             : (
               <div
-                className='bg-slate-500 text-xl font-extrabold text-white flex rounded-full items-center justify-center w-10 h-10'
+                className='avatar placeholder online'
               >
-                {capitalize(data?.user.username.substring(0, 2))}
+                <div className="w-10 bg-neutral text-neutral-content rounded-full">
+                  {capitalize(data?.user.username.substring(0, 2))}
+                </div>
               </div>
             )
           }
-        </div>
       </div>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1 p-2 shadow bg-base-100 rounded-box w-52 gap-2">
         <li

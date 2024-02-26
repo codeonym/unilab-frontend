@@ -1,4 +1,5 @@
-import { MdDashboard, MdSettings, MdApps, MdBusiness, MdFileDownload, MdBarChart } from 'react-icons/md'
+import { MdDashboard, MdOutlineChecklistRtl, MdSettings, MdApps, MdBusiness, MdFileDownload, MdSearch } from 'react-icons/md'
+import { managementLinks } from './managementLinks'
 export const navLinks = [
   {
     title: "dashboard",
@@ -6,31 +7,20 @@ export const navLinks = [
     icon: <MdDashboard />,
   },
   {
+    title: "Rechercher",
+    href: "/dashboard/search",
+    icon: <MdSearch />,
+  },
+  {
+    title: "Demandes",
+    href: "/dashboard/orders",
+    icon: <MdOutlineChecklistRtl />,
+  },
+  {
     title: "Gestion",
     href: "/dashboard/management",
     icon: <MdApps />,
-    subMenu: [
-      {
-        title: "Fournisseurs",
-        href: "/dashboard/management/providers",
-      },
-      {
-        title: "Rubriques",
-        href: "/dashboard/management/rubrics",
-      },
-      {
-        title: "Personnes",
-        href: "/dashboard/management/users",
-      },
-      {
-        title: "Matériels",
-        href: "/dashboard/management/materials",
-      },
-      {
-        title: "Consommables",
-        href: "/dashboard/management/consumables",
-      },
-    ],
+    subMenu: managementLinks
   },
   {
     title: "Budgets",
@@ -46,10 +36,5 @@ export const navLinks = [
     title: "Exportation",
     href: "/dashboard/export",
     icon: <MdFileDownload />,
-  },
-  {
-    title: "Statistiques",
-    href: "/dashboard/stats",
-    icon: <MdBarChart />,
-  },
+  }
 ];

@@ -2,7 +2,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div>laboratory id page</div>
+    <div>labo id page</div>
   )
 }
 

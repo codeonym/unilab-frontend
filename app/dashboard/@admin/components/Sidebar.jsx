@@ -17,15 +17,14 @@ const DashboardSidebar = () => {
       className={cn(
         `
       fixed
-      z-10
+      z-50
       bg-inherit
       sm:relative
       box-border
       transition-all
       duration-300
       min-h-screen
-      border-r-2
-      border-slate-50
+      shadow
           `,
         sidebarOpen
           ? "w-0"
@@ -60,8 +59,8 @@ const DashboardSidebar = () => {
         max-h-screen
         overflow-y-auto
         scrollbar-thin 
-        scrollbar-thumb-slate-200 
-        scrollbar-track-slate-100
+        scrollbar-thumb-base-300 
+        scrollbar-track-base-200
         scrollbar-rounded-md
       text-slate-500
         flex-shrink-0
@@ -97,20 +96,20 @@ const DashboardSidebar = () => {
                   key={idx}
                 >
                   <NavLink bgColor="bg-slate-600 text-white" href={navLink.href}
-                    className="flex items-center p-3 font-thin text-base hover:bg-slate-600 hover:text-white rounded gap-2">
+                    className="flex items-center p-3 font-normal text-base hover:bg-slate-600 hover:text-white rounded gap-2">
                     {navLink.icon}
                     {navLink.title}
                   </NavLink>
                   {navLink?.subMenu && (
                     <ul
-                      className='space-y-1'
+                      className='space-y-1 mt-2'
                     >
                       {navLink.subMenu.map((subLink, idx) => (
                         <li
                           key={idx}
                         >
                           <NavLink bgColor="bg-slate-600 text-white" href={subLink.href}
-                            className="flex items-center p-3 font-thin hover:bg-slate-600 hover:text-white rounded gap-2">
+                            className="flex items-center p-3 font-normal hover:bg-slate-600 hover:text-white rounded gap-2">
                             {subLink.title}
                           </NavLink>
                         </li>

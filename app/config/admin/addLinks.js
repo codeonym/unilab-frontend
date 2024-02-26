@@ -1,14 +1,14 @@
-import { MdAdd, MdStore, MdPerson, MdLaptop, MdShoppingCart } from 'react-icons/md'
-
+import { MdStore, MdPerson, MdLaptop, MdShoppingCart } from 'react-icons/md'
+import { FaCoins } from "react-icons/fa"
 export const addLinks = [
   {
     title: "Rubrique",
     href: "/dashboard/management/rubrics/new",
-    icon: <MdAdd />
+    icon: <FaCoins />
   },
   {
     title: "Fournisseur",
-    href: "/dashboard/management/providers/new",
+    href: "/dashboard/management/suppliers/new",
     icon: <MdStore />
   },
   {
