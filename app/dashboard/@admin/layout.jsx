@@ -1,16 +1,22 @@
 import React from 'react'
 import Sidebar from "./components/Sidebar";
+import Breadcrumbs from './components/Breadcrumbs';
+import Navbar from "./components/Navbar";
 
-const theme = "winter"
+const theme = "dark"
 function layout({ children }) {
   return (
     <main
-      className='flex min-h-screen w-full'
       data-theme={theme}
+      className="
+      flex w-full"
     >
       <Sidebar />
-      <div>
-        <input type="checkbox" value="sunset" className="toggle theme-controller" />
+      <div className="
+      w-full flex flex-col 
+      ">
+        <Navbar />
+        <Breadcrumbs />
         {children}
       </div>
     </main>
