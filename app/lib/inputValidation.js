@@ -6,12 +6,17 @@ import { userResponsibilities } from "@config/data-control/user"
 // Common validation for string fields
 const stringSchema = z.string().min(3).max(255);
 
-// Birth date validation
+// Birthdate validation
 const birthDateSchema = z.coerce.date().refine((value) => {
   const currentDate = new Date();
   return value < currentDate;
 });
 
+
+export const loginValidationSchema = {
+  email: z.string().email(),
+  password: z.string().min(8)
+}
 
 // Validation for user fields
 export const userValidationSchema = {

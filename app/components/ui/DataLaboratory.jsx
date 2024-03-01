@@ -1,6 +1,7 @@
 import React from 'react'
 import { singleLinks } from '@config/admin/singleLinks'
 import Link from "next/link"
+import {cn} from "@lib/utils";
 
 function DataLaboratory({ title, id }) {
   return (
@@ -15,23 +16,39 @@ function DataLaboratory({ title, id }) {
         {title}
       </span>
       <div
-        className='tooltip flex items-center gap-4 '
-        data-tip={"Voir laboratoire"}
+          className={cn('flex items-center gap-4', id && "tooltip")}
+          data-tip={"Voir laboratoire"}
       >
         {singleLinks.laboratories.icon}
-        <Link
-          href={`${singleLinks.laboratories.href}/${id}`}
-          className='
-          hover:link-info
-          p-4 whitespace-nowrap 
-          cursor-pointer
-          opacity-70 w-full overflow-x-scroll 
-          scrollbar-thin scrollbar-track-base-200 
-          scrollbar-thumb-base-300 bg-base-200 
-          rounded-md'
-        >
-          {id}
-        </Link>
+        {id
+            ? (
+              <Link
+                href={`${singleLinks.laboratories.href}/${id}`}
+                className='
+                hover:link-info
+                p-4 whitespace-nowrap
+                cursor-pointer
+                opacity-70 w-full overflow-x-scroll
+                scrollbar-thin scrollbar-track-base-200
+                scrollbar-thumb-base-300 bg-base-200
+                rounded-md'
+              >
+                {id}
+              </Link>
+            )
+            :
+            (
+                <div
+                    className='
+                    p-4 whitespace-nowrap
+                    opacity-70 w-full overflow-x-scroll
+                    scrollbar-thin scrollbar-track-base-200
+                    scrollbar-thumb-base-300 bg-base-200
+                    rounded-md'
+                >
+                  {"N/A"}
+                </div>
+            )}
       </div>
     </div>
   )

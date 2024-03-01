@@ -1,4 +1,5 @@
 import { FaFilePdf, FaFileCsv } from "react-icons/fa6"
+import { baseUrl} from "@lib/constants";
 
 export const exportResources = {
   consumables: {
@@ -22,12 +23,12 @@ export const exportResources = {
       {
         type: "pdf",
         icon: <FaFilePdf />,
-        url: "localhost:3000/assets/images/logo.png"
+        url: baseUrl + "/admin/export/pdf/assignments/"
       },
       {
         type: "csv",
         icon: <FaFileCsv />,
-        url: "localhost:3000/assets/images/logo.png"
+        url: baseUrl + "/admin/export/csv/assignments/"
       }
     ]
   },
@@ -37,12 +38,12 @@ export const exportResources = {
       {
         type: "pdf",
         icon: <FaFilePdf />,
-        url: "localhost:3000/assets/images/logo.png"
+        url: baseUrl + "/admin/export/pdf/labDetails/"
       },
       {
         type: "csv",
         icon: <FaFileCsv />,
-        url: "localhost:3000/assets/images/logo.png"
+        url: baseUrl + "/admin/export/csv/labDetails/"
       }
     ]
   }

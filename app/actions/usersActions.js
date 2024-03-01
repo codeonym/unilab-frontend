@@ -1,27 +1,18 @@
 "use server"
+import {deletePersonEndpoint, insertPersonEndpoint, updatePersonEndpoint} from "@config/endpoints/usersEndpoints";
+import {userWrapperReverse} from "@config/data-control/user";
+import {deleteResourceAction, insertResourceAction, updateResourceAction} from "@actions/crudActions";
 
 export const insertUserAction = async (formData) => {
-
-  console.log(formData);
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-
-  return { ok: true, message: "User inserted successfully" };
-};
-
-
-export const updateUserAction = async (formData) => {
-
-  console.log(formData);
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-
-  return { ok: true, message: "User updated successfully" };
+  const user = await userWrapperReverse(formData)
+  return await insertResourceAction(user, insertPersonEndpoint)
 }
 
+export const updateUserAction = async (formData) => {
+  const user = await userWrapperReverse(formData)
+  return await updateResourceAction(user, updatePersonEndpoint + formData.id)
+}
 
 export const deleteUserAction = async (id) => {
-
-  console.log(id);
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
-  return { ok: true, message: "User deleted successfully" };
+  return await deleteResourceAction(deletePersonEndpoint + id)
 }

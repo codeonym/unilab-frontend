@@ -12,7 +12,7 @@ export function cn(...inputs) {
 
 export const capitalize = (input) => {
 
-  const inputs = input.split("\s")
+  const inputs = input?.split("\s")
   let capitalized = [];
   for (let input of inputs) {
 
@@ -20,7 +20,7 @@ export const capitalize = (input) => {
     if (typeof input === "string") {
 
       // capitalize the first letter and add the rest of the string
-      let first = input[0].toUpperCase();
+      let first = input[0]?.toUpperCase();
       let rest = input.slice(1);
       capitalized.push(first + rest);
     } else {
@@ -47,7 +47,7 @@ export const getStatusColor = (status) => {
 
 export const searchForTerm = async (data, term) => {
 
-  const result = data.filter((obj) => {
+  const result = data?.filter((obj) => {
       
       // loop through the object values
     for (let value of Object.values(obj)) {
@@ -75,7 +75,7 @@ export const searchForTerm = async (data, term) => {
 export const pagination = async (data, currentPage, limit = 15) => {
 
   // calculate the total number of pages
-  const totalPages = Math.ceil(data.length / limit);
+  const totalPages = Math.ceil(data?.length / limit);
 
   // ensure the current page is not out of range
   if (currentPage < 1) {
@@ -89,7 +89,7 @@ export const pagination = async (data, currentPage, limit = 15) => {
   const end = currentPage * limit;
 
   // slice the data according to the start and end indexes
-  const slicedData = data.slice(start, end);
+  const slicedData = data?.slice(start, end);
 
   // return an object with the sliced data, the current page, and the total pages
   return {
@@ -98,3 +98,12 @@ export const pagination = async (data, currentPage, limit = 15) => {
     totalPages: totalPages,
   };
 };
+
+export function isoToDateString(isoDate) {
+  const dateObj = new Date(isoDate);
+  const year = dateObj.getFullYear();
+  const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
+  const day = dateObj.getDate().toString().padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+}

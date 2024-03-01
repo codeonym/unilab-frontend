@@ -1,27 +1,18 @@
 "use server"
+import {rubricWrapperReverse} from "@config/data-control/rubric";
+import {deleteResourceAction, insertResourceAction, updateResourceAction} from "@actions/crudActions";
+import {deleteRubricEndpoint, insertRubricEndpoint, updateRubricEndpoint} from "@config/endpoints/rubricsEndpoints";
 
 export const insertRubricAction = async (formData) => {
-
-  console.log(formData);
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-
-  return { ok: true, message: "Rubric inserted successfully" };
-};
-
-
-export const updateRubricAction = async (formData) => {
-
-  console.log(formData);
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-
-  return { ok: true, message: "Rubric updated successfully" };
+  const user = await rubricWrapperReverse(formData)
+  return await insertResourceAction(user, insertRubricEndpoint)
 }
 
+export const updateRubricAction = async (formData) => {
+  const user = await rubricWrapperReverse(formData)
+  return await updateResourceAction(user, updateRubricEndpoint + formData.id)
+}
 
 export const deleteRubricAction = async (id) => {
-
-  console.log(id);
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
-  return { ok: true, message: "Rubric deleted successfully" };
+  return await deleteResourceAction(deleteRubricEndpoint + id)
 }

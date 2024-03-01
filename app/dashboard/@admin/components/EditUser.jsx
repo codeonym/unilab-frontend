@@ -11,6 +11,9 @@ import InputSubmit from "@components/ui/InputSubmit"
 import { userValidationSchema } from "@lib/inputValidation"
 import { userResponsibilities } from "@config/data-control/user"
 import { toast } from 'react-hot-toast'
+import { redirect } from "next/navigation"
+import {singleLinks} from "@config/admin/singleLinks";
+
 
 function EditUser({ formActionHandler, userData }) {
 
@@ -80,7 +83,7 @@ function EditUser({ formActionHandler, userData }) {
     const res = await formActionHandler(jsonObject)
     if (res.ok) {
       toast.success(res.message)
-      formRef.current.reset()
+        redirect(singleLinks.users.href + "/" + res?.data?.userId)
     }
     else
       toast.error(res.message)
@@ -248,7 +251,6 @@ function EditUser({ formActionHandler, userData }) {
         />
       </div>
       <InputSubmit
-        name={"submit"}
         title={"Ajouter"}
         isValidForm={isValidForm}
       />

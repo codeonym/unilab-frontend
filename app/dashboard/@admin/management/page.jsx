@@ -16,7 +16,7 @@ function page() {
       />
       <div
         className="flex mt-8 flex-wrap items-center justify-center gap-2">
-        {managementLinks.map((link, idx) => (
+        {managementLinks?.map((link, idx) => (
           <div
             key={idx}
             className="group card w-96 bg-base-100 shadow-xl image-full"

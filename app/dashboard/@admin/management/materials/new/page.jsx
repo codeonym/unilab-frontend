@@ -1,28 +1,8 @@
 import EditMaterial from "@dashboard/@admin/components/EditMaterial"
 import SectionHeader from "@dashboard/@admin/components/SectionHeader"
-import { MdLaptop } from "react-icons/md"
 import { insertMaterialAction } from "@actions/materialsActions"
-import { faker } from "@faker-js/faker"
-
-const getLaboratoriesNicknames = async () => {
-
-  // generate some dummy data for the table
-  const data = [...new Array(45)].map(() => ({
-    id: faker.number.int({ min: 100, max: 999 }),
-    nickName: faker.company.name(),
-  }));
-  return data
-}
-
-const getSuppliersNicknames = async () => {
-
-  // generate some dummy data for the table
-  const data = [...new Array(45)].map(() => ({
-    id: faker.number.int({ min: 100, max: 999 }),
-    nickName: faker.company.name(),
-  }));
-  return data
-}
+import {getLaboratoriesNicknames, getSuppliersNicknames} from "@lib/fetchData";
+import {singleLinks} from "@config/admin/singleLinks";
 
 async function page() {
 
@@ -33,7 +13,7 @@ async function page() {
     <section className="p-4 container mx-auto">
       <SectionHeader
         title={"Nouveau matériel"}
-        icon={<MdLaptop />}
+        icon={singleLinks.materials.icon}
         description={"Ajouter des nouveaux matériels facilement!"}
       />
       {/* Insert new material */}

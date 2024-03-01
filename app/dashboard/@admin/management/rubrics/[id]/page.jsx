@@ -1,26 +1,19 @@
-import React from 'react'
 import SectionHeader from '@dashboard/@admin/components/SectionHeader'
-import { FaCoins } from "react-icons/fa";
 import ProfileRubric from '@dashboard/@admin/components/ProfileRubric'
-
-const getRubricById = async (id) => ({
-  "id": id,
-  "code": "1785469",
-  "designation": "Management et gestion",
-  "allocatedAmount": "600000",
-  "engagedAmount": "24500",
-})
+import {getRubricById} from "@lib/fetchData";
+import {singleLinks} from "@config/admin/singleLinks";
+import {rubricWrapper} from "@config/data-control/rubric";
 
 async function page({ params }) {
 
-  const rubricData = await getRubricById(params.id)
+  const rubricData = await rubricWrapper(await getRubricById(params.id))
   return (
     <section
       className='p-4 container mx-auto'
     >
       <SectionHeader
         title={"Rubrique"}
-        icon={<FaCoins />}
+        icon={singleLinks.rubrics.icon}
         description={"Bienvenue dans la page du rubrique."}
       />
       <ProfileRubric

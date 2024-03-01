@@ -4,7 +4,7 @@ function DataAvatar({className, fontSize, ancName}) {
     <div className="avatar placeholder">
       <div className={cn('bg-neutral text-neutral-content rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 w-24', className)}>
         <span className={cn("text-xl" ,fontSize) }>
-          {capitalize(ancName)}
+          {ancName}
         </span>
       </div>
     </div>

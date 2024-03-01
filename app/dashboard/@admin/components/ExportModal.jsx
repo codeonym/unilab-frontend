@@ -7,7 +7,8 @@ function ExportModal({ resource }) {
 
   const router = useRouter()
 
-  const clickHandler = () => {
+  const clickHandler = async (url) => {
+
     router.back()
   }
   return (
@@ -21,14 +22,14 @@ function ExportModal({ resource }) {
           "
         >
           {resource?.data?.map((el, idx) => (
-            <Link
+            <div
               key={idx}
-              href={el.url}
+              //href={el.url}
               className="btn btn-neutral"
-              onClick={clickHandler}
+              onClick={async () => await clickHandler(el.url)}
             >
               {el.icon} {el.type}
-            </Link>
+            </div>
           ))}
         </div>
         <div className="modal-action">

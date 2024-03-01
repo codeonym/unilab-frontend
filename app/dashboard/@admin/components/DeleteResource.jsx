@@ -3,7 +3,7 @@ import BackwardButton from '@components/ui/BackwardButton'
 import InputSubmit from '@components/ui/InputSubmit'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-hot-toast'
-import { useRouter } from 'next/navigation'
+import { useRouter} from 'next/navigation'
 import { IoClose } from "react-icons/io5";
 
 function DeleteResource({ resourceId, resourceDeleteHandler, confirmationWord }) {
@@ -25,10 +25,11 @@ function DeleteResource({ resourceId, resourceDeleteHandler, confirmationWord })
     const res = await resourceDeleteHandler(resourceId)
     if (res.ok) {
       toast.success(res.message)
+      router.back()
     } else {
       toast.error(res.message)
     }
-    router.back()
+
   }
   return (
     <dialog id="my_modal_5" className="modal modal-bottom modal-open sm:modal-middle">

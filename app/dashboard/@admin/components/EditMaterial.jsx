@@ -7,6 +7,8 @@ import InputSearch from "@components/ui/inputSearch"
 import { materialValidationSchema } from "@lib/inputValidation"
 import { toast } from 'react-hot-toast'
 import InputDate from "@components/ui/InputDate"
+import {redirect} from "next/navigation";
+import {singleLinks} from "@config/admin/singleLinks";
 
 function EditMaterial({ formActionHandler, materialData, laboratoriesArray, suppliersArray }) {
 
@@ -39,6 +41,7 @@ function EditMaterial({ formActionHandler, materialData, laboratoriesArray, supp
 
     const res = await formActionHandler(jsonObject)
     if (res.ok) {
+        redirect(singleLinks.materials.href + "/" + res?.data?.materialId)
       toast.success(res.message)
       formRef.current.reset()
     }
