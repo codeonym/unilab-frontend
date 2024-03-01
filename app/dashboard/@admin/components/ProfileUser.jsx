@@ -60,17 +60,6 @@ function ProfileUser({ userData }) {
         justify-center gap-4
         sm:grid-cols-2
         ">
-        <DataPassword
-          title={'Mot de passe'}
-          value={userData?.password}
-        />
-      </div>
-      <div
-        className="
-        grid grid-cols-1 items-center
-        justify-center gap-4
-        sm:grid-cols-2
-        ">
         <DataText
           title={'Cin'}
           value={userData?.cin}

@@ -39,7 +39,7 @@ const OrderTable = async ({ tHead, tBody, actions, query, page }) => {
                     </thead>
                     <tbody className="bg-base-200 lg:border-base-300">
                         {/* use the filteredTBody instead of tBody to render the table rows */}
-                        {filteredTBody.length > 0
+                        {filteredTBody?.length > 0
                             ? filteredTBody.map((record, idx) => (
                                 <tr key={idx} className="gap-5">
                                     {/* loop through the keys of the order object and render a table cell for each key */}

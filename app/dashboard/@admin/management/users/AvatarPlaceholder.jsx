@@ -1,5 +1,3 @@
-import React from 'react'
-
 function AvatarPlaceholder({placeholder}) {
   return (
     <div className="avatar placeholder">

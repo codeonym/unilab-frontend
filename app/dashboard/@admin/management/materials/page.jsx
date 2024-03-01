@@ -1,29 +1,15 @@
-// import React and faker
-import { faker } from '@faker-js/faker';
 import SectionHeader from "@dashboard/@admin/components/SectionHeader";
 import TableContainer from "@dashboard/@admin/components/TableContainer";
-import { IoDesktop } from "react-icons/io5"
-import { materialCols, materialActions } from '@config/data-control/material';
-
-const fetchData = async () => {
-
-  // generate some dummy data for the table
-  const data = [...new Array(45)].map(() => ({
-    id: faker.string.uuid(),
-    inventoryNumber: faker.number.int(),
-    type: faker.commerce.product(),
-    supplier: faker.company.name(),
-  }));
-
-  return data
-}
+import {materialCols, materialActions, materialsWrapper} from '@config/data-control/material';
+import {getMaterials} from "@lib/fetchData";
+import {singleLinks} from "@config/admin/singleLinks";
 
 const page = async ({ searchParams }) => {
 
   const query = searchParams?.query || '';
   const page = Number(searchParams?.page) || 1;
   const reverse = !!searchParams?.sort
-  const data = await fetchData()
+  const data = await materialsWrapper(await getMaterials())
 
   return (
     <section
@@ -31,12 +17,12 @@ const page = async ({ searchParams }) => {
     >
       <SectionHeader
         title={'Matériels'}
-        icon={<IoDesktop />}
+        icon={singleLinks.materials.icon}
         description={'Bienvenue dans la section de votre matériels'}
       />
       <TableContainer
         tHead={materialCols}
-        tBody={reverse ? data.reverse() : data}
+        tBody={reverse ? data?.reverse() : data}
         actions={materialActions}
         query={query}
         page={page}

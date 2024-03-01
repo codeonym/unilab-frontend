@@ -6,6 +6,8 @@ import InputSubmit from "@components/ui/InputSubmit"
 import InputSearch from "@components/ui/inputSearch"
 import { consumableValidationSchema } from "@lib/inputValidation"
 import { toast } from 'react-hot-toast'
+import {redirect} from "next/navigation";
+import {singleLinks} from "@config/admin/singleLinks";
 
 function EditMaterial({ formActionHandler, consumableData, laboratoriesArray, suppliersArray }) {
 
@@ -36,6 +38,7 @@ function EditMaterial({ formActionHandler, consumableData, laboratoriesArray, su
     const res = await formActionHandler(jsonObject)
     if (res.ok) {
       toast.success(res.message)
+      redirect(singleLinks.consumables.href + "/" + res?.data?.supplierId)
       formRef.current.reset()
     }
     else

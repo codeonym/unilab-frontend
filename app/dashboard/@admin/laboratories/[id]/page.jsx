@@ -2,17 +2,12 @@ import React from 'react'
 import SectionHeader from '@dashboard/@admin/components/SectionHeader'
 import { singleLinks } from '@config/admin/singleLinks'
 import ProfileLaboratory from '@dashboard/@admin/components/ProfileLaboratory'
-
-const getLaboratoryById = async (id) => ({
-  "id": id,
-  "name": "LaRI",
-  "responsiblePersonId": "4587",
-  "deputyPersonId": "41125",
-})
+import {laboratoryWrapper} from "@config/data-control/laboratory";
+import {getLaboratoryById} from "@lib/fetchData";
 
 async function page({ params }) {
 
-  const laboratoryData = await getLaboratoryById(params.id)
+  const laboratoryData = await laboratoryWrapper(await getLaboratoryById(params.id))
   return (
     <section
       className='p-4 container mx-auto'

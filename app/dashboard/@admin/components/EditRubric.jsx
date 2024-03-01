@@ -5,6 +5,8 @@ import InputNumber from "@components/ui/InputNumber"
 import InputSubmit from "@components/ui/InputSubmit"
 import { rubricValidationSchema } from "@lib/inputValidation"
 import { toast } from 'react-hot-toast'
+import {redirect} from "next/navigation";
+import {singleLinks} from "@config/admin/singleLinks";
 
 function EditRubric({ formActionHandler, rubricData }) {
 
@@ -46,8 +48,9 @@ function EditRubric({ formActionHandler, rubricData }) {
 
     const res = await formActionHandler(jsonObject)
     if (res.ok) {
-      toast.success(res.message)
-      formRef.current.reset()
+        redirect(singleLinks.rubrics.href + "/" + res?.data?.rubricId)
+        toast.success(res.message)
+        formRef.current.reset()
     }
     else
       toast.error(res.message)

@@ -17,7 +17,7 @@ function InputSelect({ title, name, options, isRequired, setIsValidInput, inputV
         isValid || ERROR_CLASS
       )}
       required={!!isRequired}
-      value={inputValue || ""}
+      value={inputValue}
       onChange={handleInputChange}
     >
       <option disabled value="">
@@ -25,7 +25,7 @@ function InputSelect({ title, name, options, isRequired, setIsValidInput, inputV
       </option>
       {options.map((option, idx) => (
         <option key={idx} value={option}>
-          {option}
+          {option?.toLowerCase()}
         </option>
       ))}
     </select>

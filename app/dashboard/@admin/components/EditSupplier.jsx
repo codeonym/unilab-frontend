@@ -8,6 +8,8 @@ import InputSubmit from "@components/ui/InputSubmit"
 import InputSearch from "@components/ui/inputSearch"
 import { supplierValidationSchema } from "@lib/inputValidation"
 import { toast } from 'react-hot-toast'
+import {redirect} from "next/navigation";
+import {singleLinks} from "@config/admin/singleLinks";
 
 function EditSupplier({ formActionHandler, supplierData, respArray }) {
 
@@ -56,6 +58,7 @@ function EditSupplier({ formActionHandler, supplierData, respArray }) {
     const res = await formActionHandler(jsonObject)
     if (res.ok) {
       toast.success(res.message)
+        redirect(singleLinks.suppliers.href + "/" + res?.data?.supplierId)
       formRef.current.reset()
     }
     else
@@ -157,10 +160,10 @@ function EditSupplier({ formActionHandler, supplierData, respArray }) {
       </div>
       <InputSearch
         title={"Resp"}
-        name={"responsibleId"}
+        name={"responsiblePersonId"}
         placeholder={'Chercher par id, nom complete...'}
         isRequired={false}
-        defaultValue={supplierData?.responsibleId}
+        defaultValue={supplierData?.responsiblePersonId}
         data={respArray}
       />
       <InputSubmit

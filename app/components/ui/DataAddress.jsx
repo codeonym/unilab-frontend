@@ -18,7 +18,7 @@ function DataAddress({ title, value }) {
         <div
           className='p-4 whitespace-nowrap opacity-70 w-full overflow-x-scroll scrollbar-thin scrollbar-track-base-200 scrollbar-thumb-base-300 bg-base-200 rounded-md'
         >
-          {value}
+          {value || "N/A"}
         </div>
       </div>
     </div>
