@@ -1,20 +1,10 @@
+"use client"
 import React, { useState } from 'react';
-import { IoMdAddCircleOutline } from "react-icons/io";
-import AddMaterialCmnd from './AddMaterialCmnd';
-const OrderTable = ({ tableHeader, orders, openAddMat ,openAddCons, tableType}) => {
-    const getStatusColor = (status) => {
-        switch (status) {
-            case "Approuvé":
-                return "bg-green-100 text-green-800";
-            case "Rejeté":
-                return "bg-red-100 text-red-600";
-            default:
-                return "bg-blue-100 text-blue-800";
-        }
-    };
-    const ordersPerPage = 5; // Number of orders per page
+
+const MaterialsTable = ({ tableHeader, materials}) => {
+    const ordersPerPage = 10; // Number of orders per page
     const [currentPage, setCurrentPage] = useState(1);
-    const totalPages = Math.ceil(orders.length / ordersPerPage);
+    const totalPages = Math.ceil(materials.length / ordersPerPage);
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
@@ -38,10 +28,7 @@ const OrderTable = ({ tableHeader, orders, openAddMat ,openAddCons, tableType}) 
                         </svg>
                         Filtrer
                     </button>
-                    <button type="button" className="relative mr-auto inline-flex cursor-pointer items-center rounded-full border border-blue-400 bg-white px-5 py-2 text-center text-sm font-medium text-blue-700 hover:bg-blue-100 focus:shadow sm:mr-0" onClick={()=>tableType === "materials" ? openAddMat(): openAddCons()}>
-                        <IoMdAddCircleOutline className="mr-1"/>
-                        Ajouter
-                    </button>
+
                     </div>
                 </div>
             </div>
@@ -56,19 +43,14 @@ const OrderTable = ({ tableHeader, orders, openAddMat ,openAddCons, tableType}) 
                             ))}
                         </tr>
                     </thead>
-                    <tbody className="bg-white lg:border-gray-300 text-center">
-                        {orders.slice((currentPage - 1) * ordersPerPage, Math.min(currentPage * ordersPerPage, orders.length)).map(order => (
-                            <tr key={order.orderId} className="gap-5">
-                                <td className="whitespace-no-wrap min-w-36  py-4 text-sm font-normal text-gray-600 sm:px-3 lg:table-cell">{order.requestDate}</td>
-                                <td className="whitespace-no-wrap min-w-36 py-4 text-sm font-normal text-gray-600 sm:px-3 lg:table-cell">{order.id}</td>
-                                <td className="whitespace-no-wrap min-w-36 py-4 text-sm font-normal text-gray-600 sm:px-3 lg:table-cell">{order.productId}</td>
-                                <td className="whitespace-no-wrap min-w-36 py-4 text-left text-sm text-gray-600 sm:px-3 lg:table-cell lg:text-left">{order.name}</td>
-                                <td className="whitespace-no-wrap min-w-36 py-4 text-left text-sm text-gray-600 sm:px-3 lg:table-cell lg:text-left">{order.supplier}</td>
-                                <td className="whitespace-no-wrap min-w-36 py-4 text-sm font-normal text-gray-500 sm:px-3 lg:table-cell">
-                                    <span className={`ml-2 mr-3 whitespace-nowrap rounded-full px-2 py-0.5 ${getStatusColor(order.approvalStatus)}`}>
-                                        {order.approvalStatus}
-                                    </span>
-                                </td>
+                    <tbody className="bg-white lg:border-gray-300">
+                        {materials.slice((currentPage - 1) * ordersPerPage, Math.min(currentPage * ordersPerPage, materials.length)).map(material => (
+                            <tr key={materials.orderId} className="gap-5">
+                                <td className="whitespace-no-wrap min-w-36  py-4 text-sm font-normal text-gray-600 sm:px-3 lg:table-cell">{material.orderDate}</td>
+                                <td className="whitespace-no-wrap min-w-36 py-4 text-sm font-normal text-gray-600 sm:px-3 lg:table-cell">{material.orderId}</td>
+                                <td className="whitespace-no-wrap min-w-36 py-4 text-sm font-normal text-gray-600 sm:px-3 lg:table-cell">{material.description}</td>
+                                <td className="whitespace-no-wrap min-w-36 py-4 text-left text-sm text-gray-600 sm:px-3 lg:table-cell lg:text-left">{material.materialType}</td>
+                                <td className="whitespace-no-wrap min-w-36 py-4 text-left text-sm text-gray-600 sm:px-3 lg:table-cell lg:text-left">{material.invNum}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -85,4 +67,4 @@ const OrderTable = ({ tableHeader, orders, openAddMat ,openAddCons, tableType}) 
     );
 };
 
-export default OrderTable;
+export default MaterialsTable;

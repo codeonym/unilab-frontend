@@ -3,8 +3,12 @@ import Link from "next/link";
 import React from "react";
 import {singleLinks} from "@config/admin/singleLinks";
 import {getAdminPendingOrders} from "@lib/fetchData";
+import {withAuth} from "@lib/auth";
 
 const Notifications = async(props) => {
+    const {user} = await withAuth()
+    if (user.role !== "ADMIN")
+        return (<>NotFound</>)
     const orders = await getAdminPendingOrders()
 
     return (

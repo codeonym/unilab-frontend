@@ -1,6 +1,7 @@
 import {
     getAllLaboratoriesEndpoint,
     getLaboratoryByIdEndpoint,
+    getLaboratoryByNameEndpoint,
 } from "@config/endpoints/laboratoriesEndpoints";
 import { withAuth } from "@lib/auth"
 import {getAllSuppliersEndpoint, getSupplierByIdEndpoint} from "@config/endpoints/suppliersEndpoints";
@@ -29,12 +30,12 @@ export const getResources = async (getResourcesEndpoint) => {
             }
         })
         if (!res.ok) {
-            throw new Error("Network response was not ok");
+            throw new Error("Network - from fetchData -  response was not ok");
         }
         const data = await res.json();
         return data
     } catch (error) {
-        console.error("Error  fetching" + getResourcesEndpoint + ":", error);
+        console.error("Error  fetching: " + getResourcesEndpoint + ":", error);
         return null;
     }
 }
@@ -127,3 +128,5 @@ export const getConsumableById = async (id) => {
 export const getPendingOrderById = async (id) => {
     return await getResources(getOrderByIdEndpoint + id)
 }
+
+

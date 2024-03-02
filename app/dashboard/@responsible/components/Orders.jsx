@@ -3,14 +3,23 @@ import MaterialsOrders from './MaterialsOrders'
 import ConsumablsOrders from './ConsumablsOrders'
 import AddCunsumableCmnd from './AddCunsumableCmnd'
 import AddMaterialCmnd from './AddMaterialCmnd'
+import { withAuth } from '@lib/auth';
+import { laboratoryMaterialsOrdersWrapper, laboratoryConsumablesOrdersWrapper } from '@config/data-control/laboratoryOrders';
+import { getLabConsumablesOrders, getLabMaterialsOrders, getUserDetails } from '@lib/fetchResponsibleData';
 
-const Orders = () => {
+
+
+const Orders = async () => {
+  const { user} = await withAuth()
+  const userData = await getUserDetails(user?.id)
+  const materialOrders = await laboratoryMaterialsOrdersWrapper(await getLabMaterialsOrders(userData?.laboratoryId))
+  const consumableOrders = await laboratoryConsumablesOrdersWrapper(await getLabConsumablesOrders(userData?.laboratoryId))
   return (
     <div>
 
-        <MaterialsOrders/>
+        <MaterialsOrders orders={materialOrders}/>
   
-        <ConsumablsOrders/>
+        <ConsumablsOrders orders={consumableOrders}/>
         
     </div>
   )

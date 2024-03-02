@@ -1,11 +1,10 @@
-/** @format */
 "use client";
 
 import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from 'next/navigation'
 import Image from "next/image";
-
+import { signOut } from "next-auth/react";
 export default function Navbar() {
   const [isMenuOpen, setMenu] = useState(false);
   const [isNavOpen,setNavOpen] = useState(false)
@@ -20,11 +19,15 @@ export default function Navbar() {
     },
     {
       labe: "Consumables",
-      link: "/dashboard/consumabls"
+      link: "/dashboard/consumables"
     },
     {
-      labe: "requests",
-      link: "/dashboard/requests"
+      labe: "Affectation",
+      link: "/dashboard/assignment"
+    },
+    {
+      labe: "Demandes",
+      link:"/dashboard/orders"
     }
   ];
   function IsActive(link) {
@@ -131,14 +134,15 @@ export default function Navbar() {
 
               <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-0">Your Profile</a>
               <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-1">Settings</a>
-              <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Sign out</a>
+              <button onClick={async () => {
+              await signOut({ callbackUrl: "/dashboard" })
+            }} className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Sign out</button>
             </div>)
           }
           </div>
         </div>
       </div>
     </div>
-  
     
     <div className={ `${ !isNavOpen && "hidden"} sm:hidden`}>
       <div className="space-y-1 px-2 pb-3 pt-2">
