@@ -4,6 +4,7 @@ import { MdOutlineChecklistRtl } from 'react-icons/md'
 import SectionHeader from '../components/SectionHeader'
 import { getUserDetails, getResponsiblePendingOrders } from '@lib/fetchResponsibleData'
 import { withAuth } from '@lib/auth'
+import {orderResponsibleApprovalAction} from "@actions/ordersActions";
 
 async function page() {
   // Generate some fake orders for demonstration
@@ -11,8 +12,7 @@ async function page() {
 
   const userData = await getUserDetails(user?.id)
   
-  const orders = await getResponsiblePendingOrders(userData.laboratoryId)
-  console.log(orders)
+  const allOrders = await getResponsiblePendingOrders(userData.laboratoryId)
 
   return (
     <section className='p-4 '>
@@ -23,8 +23,12 @@ async function page() {
         description={"Bienvenue dans la section des demandes"}
       />
       <div className='grid items-center justify-center flex-col gap-4 mt-4 h-screen overflow-y-scroll'>
-        {orders.map((order) => (
-          <OrderCard key={order.id} order={order} />
+        {allOrders?.map((order) => (
+            <OrderCard
+                key={order?.id}
+                orderApprovalAction={orderResponsibleApprovalAction}
+                order={order}
+            />
         ))}
       </div>
     </section>

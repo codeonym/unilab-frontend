@@ -18,6 +18,7 @@ function OrderCard({ order, orderApprovalAction }) {
       toast.error(res.message)
     }
   }
+
   return (
     <div
       className='grid sm:grid-cols-3 items-center justify-center p-4 gap-2 rounded shadow'

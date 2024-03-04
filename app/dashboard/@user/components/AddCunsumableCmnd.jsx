@@ -1,14 +1,14 @@
 import React from 'react'
 import {toast} from "react-hot-toast";
 
-const AddCunsumableCmnd = ({isVisible, onClose,consumables,formActionHandler,labId}) => {
+const AddCunsumableCmnd = ({isVisible, onClose,consumables,formActionHandler,userId}) => {
 
         const formAction = async (formData) => {
             const jsonObject = {};
             formData.forEach((value, name) => {
                 jsonObject[name] = value;
             })
-            jsonObject["labId"] = labId
+            jsonObject["userId"] = userId
             console.log(jsonObject)
             const res = await formActionHandler(jsonObject)
             if (res.ok) {

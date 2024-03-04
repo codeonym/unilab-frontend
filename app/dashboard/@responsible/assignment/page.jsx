@@ -15,7 +15,7 @@ async function page() {
     const materialsArray = await getMaterialsNickNames(userData.laboratoryId)   
 
     return (
-        <section className="p-4 container mx-auto mt-12">
+        <section className="p-4 container mx-auto mt-12 h-screen">
             <SectionHeader
             title={"Affectation"}
             icon={<IoDesktop />}

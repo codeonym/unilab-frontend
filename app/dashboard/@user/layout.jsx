@@ -1,7 +1,7 @@
 import NavBar from "./components/NavBar";
 export const metadata = {
-  title: "Responsible",
-  description: "Responsible Dashboard",
+  title: "User",
+  description: "user dashboard",
 };
 
 export default function RootLayout({ children }) {

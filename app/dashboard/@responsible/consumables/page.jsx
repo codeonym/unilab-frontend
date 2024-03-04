@@ -5,26 +5,22 @@ import SectionHeader from '../components/SectionHeader';
 import TableContainer from "../components/TableContainer";
 import { PiToolboxFill } from "react-icons/pi"
 import { consumableCols, consumableActions } from '@config/data-control/labConsumable';
+import {withAuth} from "@lib/auth";
+import {getLaboratoryConsumables, getUserDetails} from "@lib/fetchResponsibleData";
+import {consumablesWrapper} from "@config/data-control/labConsumable";
 
-const fetchData = async () => {
-  // generate some dummy data for the table
-  const data = [...new Array(45)].map(() => ({
-    id: faker.string.uuid(),
-    type: faker.commerce.productName(),
-    quantity: faker.number.int({min:10, max:1000}),
-    supplier: faker.person.fullName(),
-    assignDate: "2002-06-18"
-  }));
 
-  return data
-}
 
 const page = async ({searchParams}) => {
+
+  const { user} = await withAuth()
+
+  const userData = await getUserDetails(user?.id)
 
   const query = searchParams?.query || '';
   const page = Number(searchParams?.page) || 1;
   const reverse = !!searchParams?.sort
-  const data = await fetchData()
+  const data = await consumablesWrapper(await getLaboratoryConsumables(userData?.laboratoryId))
   
   // return the page component
   return (

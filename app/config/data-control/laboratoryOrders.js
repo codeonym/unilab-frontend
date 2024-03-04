@@ -25,7 +25,7 @@ export const laboratoryConsumablesOrdersWrapper = async (orders) => {
 const status = (status) => {
     if (status == "PENDING")
         return "En attente"
-    if(status == "APPROUVED")
+    if(status == "APPROVED")
         return "Approuvé"
     return "Rejeté"
 }

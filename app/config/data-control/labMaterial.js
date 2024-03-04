@@ -7,12 +7,14 @@ export const materialCols = [
 ]
 
 export const materialsWrapper = async (materials) => {
+    console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&")
+    console.log(materials)
     return materials?.map(material => ( {
     id: material?.materialId,
     inventoryNumber: material?.inventoryNumber,
     type: material?.type,
     supplier: material?.supplier?.name,
-    assignmentDate: material?.labAssignmentDate
+    assignmentDate: material?.assignmentDate
     }))
 }
 

@@ -2,14 +2,14 @@
 import React from 'react'
 import {toast} from "react-hot-toast";
 
-const AddMaterialCmnd = ({isVisible, onClose,materials,formActionHandler, labId}) => {
+const AddMaterialCmnd = ({isVisible, onClose,materials,formActionHandler, userId}) => {
 
     const formAction = async (formData) => {
         const jsonObject = {};
         formData.forEach((value, name) => {
             jsonObject[name] = value;
         })
-        jsonObject["labId"] = labId
+        jsonObject["userId"] = userId
         const res = await formActionHandler(jsonObject)
         if (res.ok) {
             toast.success(res.message)

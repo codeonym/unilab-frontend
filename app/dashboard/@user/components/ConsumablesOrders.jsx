@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import OrdersTable from './OrdersTable';
 import AddCunsumableCmnd from './AddCunsumableCmnd';
 
-const ConsumablesOrders = ({orders,consumables,formActionHandler,labId}) => {
+const ConsumablesOrders = ({orders,consumables,formActionHandler,userId}) => {
     const tableHeader = ["Date de commande","Id de commande","Id de Produit","Type","Fournisseur","Status"];
     const [openModal, setOpenModal] = useState(false)
 
@@ -25,7 +25,7 @@ const ConsumablesOrders = ({orders,consumables,formActionHandler,labId}) => {
                     
                 </div>
             </div>
-            <AddCunsumableCmnd isVisible={openModal} onClose={()=>setOpenModal(false)} consumables={consumables} formActionHandler={formActionHandler} labId={labId}/>
+            <AddCunsumableCmnd isVisible={openModal} onClose={()=>setOpenModal(false)} consumables={consumables} formActionHandler={formActionHandler} userId={userId}/>
         </div>
     );
 };

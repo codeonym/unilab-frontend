@@ -1,7 +1,10 @@
 import { withAuth } from "@lib/auth"
 import {getPersonByIdEndpoint, getPersonsByLaboratoryIdEndpoint} from "@config/endpoints/responsible/userEndPoints"
 import { usersNickNamesWrapper } from "@config/data-control/user"
-import {getAllMaterialsEndpoint} from "@config/endpoints/responsible/labMaterialsEndPoint"
+import {
+    getAllMaterialsResponsibleEndpoint,
+    getLaboratoryMaterialsEndpoint
+} from "@config/endpoints/responsible/labMaterialsEndPoint"
 import {
     getLabConsumablesOrdersByLabIdEndpoint,
     getLabMaterialsOrdersByLabIdEndpoint,
@@ -9,6 +12,14 @@ import {
 } from "@config/endpoints/responsible/ordersEndPoints"
 import { materialsNickNameWrapper } from "@config/data-control/labMaterial"
 import { adminConsumablesOrdersWrapper, adminMaterialsOrdersWrapper } from "@config/data-control/adminOrders"
+import {
+    responsibleConsumablesOrdersWrapper,
+    responsibleMaterialsOrdersWrapper
+} from "@config/data-control/responsibleOrders";
+import {
+    getAllConsumablesResponsibleEndpoint,
+    getAllLaboratoryConsumablesEndPoint
+} from "@config/endpoints/responsible/labConsumablesEndPoints";
 
 // Definitions
 export const getResources = async (getResourcesEndpoint) => {
@@ -34,10 +45,19 @@ export const getUserDetails = async (id) =>{
     return await getResources(getPersonByIdEndpoint + id)
 }
 
+export const getAllMaterials = async () => {
+    return await getResources(getAllMaterialsResponsibleEndpoint)
+}
 export const getLaboratoryMaterials = async (id) => {
-    return await getResources(getAllMaterialsEndpoint + id)
+    return await getResources(getLaboratoryMaterialsEndpoint + id)
+}
+export const getAllConsumables = async () => {
+    return await getResources( getAllConsumablesResponsibleEndpoint )
 }
 
+export const getLaboratoryConsumables = async (id) => {
+    return await getResources(getAllLaboratoryConsumablesEndPoint + id)
+}
 export const getLabMaterialsOrders = async (id) =>{
     return await getResources(getLabMaterialsOrdersByLabIdEndpoint + id)
 }
@@ -63,23 +83,21 @@ export const getMaterialsNickNames  = async (id) => {
 }
 
 export const getResponsibleMaterialsOrders = async (id) => {
-    const data =  await getResources(getUsersMaterialOrdersEndpoint + id)
-    console.log(data);
-    return data
+    return await getResources(getUsersMaterialOrdersEndpoint + id)
+
 }
 
 export const getResponsibleConsumablesOrders = async (id) => {
-    const data =  await getResources(getUsersConsumablesOrdersEndpoint + id)
-    return data
+    return await getResources(getUsersConsumablesOrdersEndpoint + id)
 }
 
 export const getResponsiblePendingOrders = async (id) => {
     try {
-        const consumables = await adminConsumablesOrdersWrapper(await getResponsibleMaterialsOrders(id))
-        const materials = await adminMaterialsOrdersWrapper(await getResponsibleConsumablesOrders(id))
-        return [... consumables, ...materials]?.filter(order => order?.approvalStatus === "PENDING")
+        const consumables = await responsibleConsumablesOrdersWrapper(await getResponsibleConsumablesOrders(id))
+        const materials = await responsibleMaterialsOrdersWrapper(await getResponsibleMaterialsOrders(id))
+        return materials && consumables ? [... consumables, ...materials]?.filter(order => order?.approvalStatus === "PENDING"): null
+
     }catch (err) {
-        console.log("ERROR is hapening at get Responsible data #################################################################################################")
         console.error(err)
     }
     return null

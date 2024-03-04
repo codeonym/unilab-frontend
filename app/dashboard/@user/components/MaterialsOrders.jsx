@@ -4,7 +4,7 @@ import React, { Fragment, useState } from 'react';
 import OrdersTable from './OrdersTable';
 import AddMaterialCmnd from './AddMaterialCmnd';
 
-const MaterialsOrders =  ({orders,materials,formActionHandler,labId}) => {
+const MaterialsOrders =  ({orders,materials,formActionHandler,userId}) => {
     const tableHeader = ["Date de commande","Id de commande","Id de Produit","Type","Fournisseur","Status"];
     const [openModal, setOpenModal] = useState(false);
 
@@ -27,7 +27,7 @@ const MaterialsOrders =  ({orders,materials,formActionHandler,labId}) => {
                     </div>
                 </div>
             </div>
-            <AddMaterialCmnd isVisible={openModal} onClose={()=>setOpenModal(false)} materials={materials} formActionHandler={formActionHandler} labId={labId}/>
+            <AddMaterialCmnd isVisible={openModal} onClose={()=>setOpenModal(false)} materials={materials} formActionHandler={formActionHandler} userId={userId}/>
         </Fragment >
     );
 };

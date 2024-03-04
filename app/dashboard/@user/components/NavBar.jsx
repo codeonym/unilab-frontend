@@ -15,20 +15,12 @@ export default function Navbar() {
     },
     {
       labe: "Materials",
-      link: "/dashboard/materials"
+      link: "/dashboard/user-materials"
     },
     {
       labe: "Consumables",
-      link: "/dashboard/consumables"
+      link: "/dashboard/user-consumables"
     },
-    {
-      labe: "Affectation",
-      link: "/dashboard/assignment"
-    },
-    {
-      labe: "Demandes",
-      link:"/dashboard/lab-orders"
-    }
   ];
   function IsActive(link) {
     const path = usePathname();

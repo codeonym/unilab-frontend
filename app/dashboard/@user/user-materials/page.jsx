@@ -6,8 +6,8 @@ import TableContainer from "../components/TableContainer";
 import { IoDesktop } from "react-icons/io5"
 import { materialCols, materialActions } from '@config/data-control/labMaterial';
 import {withAuth} from "@lib/auth"
-import { getUserDetails,getLaboratoryMaterials } from '@lib/fetchResponsibleData';
 import { materialsWrapper } from '@config/data-control/labMaterial';
+import {getUserMaterials} from "@lib/fetchUserData";
 
 
 
@@ -19,13 +19,11 @@ const page = async ({searchParams}) => {
   const page = Number(searchParams?.page) || 1;
   const reverse = !!searchParams?.sort
   const { user} = await withAuth()
-  const userData = await getUserDetails(user?.id)
-  const data = await materialsWrapper(await getLaboratoryMaterials(userData?.laboratoryId));
-  
+  const data = await materialsWrapper(await getUserMaterials(user?.id));
   // return the page component
   return (
     <section
-      className='p-4 container mx-auto'
+      className='p-4 container mx-auto min-h-screen'
     >
       <SectionHeader
         title={'Matérels'}
