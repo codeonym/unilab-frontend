@@ -10,7 +10,9 @@ export const checkUserRole = async () => {
   const session = await getServerSession(authOptions)
   if(session) {
     console.log(JSON.stringify(session))
-    return session?.user?.role?.toLowerCase()
+    const role = session?.user?.role?.toLowerCase()
+    console.log("role: -----------------------" + role)
+        return role
   }else {
     redirect('/login', 'replace')
   }

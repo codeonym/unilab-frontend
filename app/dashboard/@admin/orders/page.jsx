@@ -16,7 +16,7 @@ async function page() {
         icon={singleLinks.orders.icon}
         description={"Bienvenue dans la section des demandes"}
       />
-      <div className='grid items-center justify-center flex-col gap-4 mt-4'>
+      <div className='grid items-center justify-center flex-col gap-4 mt-2'>
         {orders?.map((order) => (
           <OrderCard
               key={order?.id}
