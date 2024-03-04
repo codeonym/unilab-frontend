@@ -1,0 +1,564 @@
+<!--
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=gauge-car&renderer=svg&code=PYBwLglsB2AEC8sDeAoWsBGBDAxgawHMAnYAV2gBMBhYAG2CIC5YByAYgAYuWAaNWMMDqQQzVOnQAzBgFssYMAFMmrJFgC-sADwYiAegB8SDJrE51AUhb91fdILoZgADzH8pi-aSKK3EiT4AzoI-YrbuEoFYAG6KAIKBAJJyBL7I6hEZ6OHogcoQioHMANoRenqwtIqSYBHi_rDQWDJpLARYpKmwHLwR9gCeIK3tnYq9DbAyENDMALQATFx2DXKusPMArBzL_sFYRGBx0ARVcwDM232wipRHJ2mzZwCMGzuRILQQYABypDIYymYAE43ugiFgKBBSEVWGcNlZQbAcDclCpiix5k8EawNvCWABdRFYZwQQIAGWmaXqE0-0EUAGUwP1Tsgrv4cHQGCVik8eKwfBQCfi2bAsg0cg1Ah8vhS6X4JrBAgALYAAd2YkiwtDyVwl_mJpIAKhB8PKJsq1RqtTqJnqJAbyVgAbQzZKVerYJrtYpdUToDgVSokHb0CBgNNUa7du6rd7fVcKIowFgIC7WQrFTHPdafbbEZAwCzqQ1pNAwPSIAAvNJPeaIqQwMAAdUUEAISrAzAAHEsRaWwAAxZqp_rMFhxIgQLXjBUc-gqdiSJczibAJd5MBUFGA2DFbasWYANg4VmFeauIBIxEKMOL0ctAiIpEU9dgqogFDASuYZ1fX0UMiMsyVIiugc5cqwbBLpI1gZmK_ghrAFDyFgJQineDTRFqz7MJslwZugTQtGOeAyHoSqwQq8ESGeEh2hhRHDB0XRPCuEhMkMY4jKkbHoFMMzdIiqy4VsiJ7AcdwsrMTwACz4Q0NwUJJDwXK8VxSp8Px_ACKhqRM4KQtCY5wgiVzImWO7opi2IsLip5EiS5KUlGEi0gyTJFqBSKcmiPJ8uwcQAKJAoecSHkKIrUdkYnSmAsogRmkJ7P6DwAOyvlUxxfswtYZZSQGeQR3nzmOUHLq-6Dvp-36wDJkXxhMDrGqa6YKklyYpXMXYZTcBDZbA3Uim5BUJQR4ELmVMEVW-H79fM9Xno1jlkk6ihphh6DtVgnWwLJr79hW1Y5YNGb9i2bYdt2vanY2Q5TLQo6sBOU60LxEjjaV0GUQhfoBhBwaImGEY7htsAmjAY4gPI37lAAso8h4AHSvPMZyI0CZKzDJvIyYjMk4LMHCI08hN46TMmk6llOUwTRMbKTJNPMTPBE_M0mI3WROpbQWPIzwTxAsjODbETvIi8z4vzNEQLzIjZzCyziOHorMn82rTxKkCwtKyz_Pk3rTwAGrzLjTxUAjfMmxbKNo0C1s8Kj6OVrA8NnILrxPLJStKrMGzRLMXYbEqGyG57uOHpWb2VbNNV6QqmV9TVLByaZGZrpIG5bhZaL7iwvtdvZIr_oBHmjRmH2QZI3DTcqEJqjQJX8gQ2AABSbK8gndAAlFHkRKnXqoAEK0N4zBxxmtcUGqADy65JgAmrhC3ivmXyFbOPmfeVfaNodNaqzvZbne2nYDddCr9ndI5js906vunmfbjnfIcLRP0JkmKbrSKFoel6NorwTChNCGZQboCwiPNI8kMyMTHIAZX1ACySoAWXlAB2_oALH-AA6cAsGwEALRygBFz0APex31xRXDfqKN45RJgfgoFUOoVxYGsG4oodYb0OJMVGG9fizBoESGEgNRElYcq8NyMmCSxwWSYhEdcW4EiVLSI0l8X4_wdwnQaAZKEMJbInjeuZSMu5tE2S2IXJapJ4ouVyFmMAT4XxDXyqXCxEgqr9WkeyTeu4vLoD3IjLsmx_KTQJNNLxvJK7cHIRMcJdEGqSliuY1qEwto7UWD1LKNUXh5TpCNRxYF3EsA6IIXu0dqrMAPkVSe9dclEGblgNuuI-Tt3qXU7oyMe4137lPIeI8VDpK8uU1Us8M4LzmE8Dgy936mMCM1PAjjEnIlwq4yovV-pqJpPY4C2TioQTyaQAp01nE1TrL09pFTG4sCqa3Bp6wmnt1aUcgew9R67QWZYgeAyNyL1gNJUZcFon6mWqtb-iVSQdTmU8_au8qxpDhOCo-rYT5XQWZfYcD0b6TjviKCui5ly_PtP6QMYRAbhmzo48GAkWBQ2ynDe2jsMZYxxnjWmxNybMq5tTLmjL6ai3ZmLDm7NOaI25rzD27sFai11mKyW0tZby3FsrImqteSKs1trOVet5UG2Nqbc2ZwkYowpjqy2ttqW22dq7d2_MvaHh9n7AOQcQ5hyVpHV8-zhH3znpuJ-JRc5fJMfHJZSdUp4j_EoEu6z4kb1OVBaudyOkNy2ecmplz9wcFuWU45nTHnjwVH0t5QzYBnDGXRVehYy4NExQEmF5ZIU5UOTdWFF1T49kRbdZFj1xxotem6wZHriW7m9cYgkOLNrAI8aAryECcLNOVl5RhLAnh6H4rAZwTzuCFvQISD-yZUyON_rGABCFMhvAYs0DhXQzhsMGKesYQlpg8KEsSbsgjXXqVisonSj6rgaKMjiHRDkzHOXDf4YaDjAMNBdbtUpY13HFD8pBLgPR8SROyEOxUsSAOg13dmOMi0GhNRNNM0DliHz_1zIAiZK1nQ7qzCRlD20_pBkQkDXtGHqM5hQwWde5pWPYbIw0RMW7AUKgfkmLO-irJBp_b6iY0giByAUDuFgagAA-SAJ2KHUOoYwSnSLkXUL3ScAYNmoUIyWCFR1YDHiCZ6Rsx9Lpn2eRIJF9022307Z4zZE0vpWa1G2MlejlCFIkFDCgkJjher5B3ZNSGi1eQwBshsZY945Ug0VM6cK7NNqs056-T0O2BZyZGrz7nguhYIOFzuyTujReQz8nD_gqFqbBoEVDihFAUCAcmEBCowGwDU3emdJ6xwkIPREw9ZQKiThPvQiYs7mG1QvZxJhzFr1XG4YJVbD6BHqTEYcOROVoVXEUspYZokX2aTfaoxEX6tEmV0Z6gxqUgRGLxBu8j6G7GZJAz1iuMGQkBWCqFcKiG10ULOzKd7E9uP7pixMqZVHiNsbq_af5lGTOYZo0j9AdH8XpEJcDIMP8oekfGQ0DjVJEL8a_o44TPaxN5xeNiV-4LZPyDE15RTWAlNFQzFwRgXA9PTQ50pwAMhGADcswAb6aABfUhUHA-ccE0xgLnSoBfs-U2LwAu7GAG7PHniN5dadgKRFXRUheAGc9QA4uqAHQAwAvwEZlmHbhXXP50jI4IbwLpuzeAHwEwAZXq2_t_rnTyvhs0URgAKyJS3FgWCWBd1fAZmqPXjM9YS1W8ze13NpYbQirLLbnOopevlyolIAAS6XT7zFrdz8tRXuewB8wQMlVQahB5JxmOLJn_AZ_hRZ8-qWc85fbfnqzbkS-Z_WBXoqVft417rw36oYBm9RNq7x_wl5gDXkCLeQnD5rHPmdTHH8waAJZPbx5reMEQcU5HaUMdRU-tXIc7OhfUVYDkPogwwbS3RiwA2Atq9XDb3rYTD8K8jbb7C7b3A1pZroBHZ7bf5QGobnbaQ7jj4BAQiaLGQySpxlr3boiPbPZyxSbI7_pygmbAZho9bgYgheQ_bubeLpKhIIZWawZnLVK1KRYvwvw9zVYv4X4xSaRxKgyzIPBp4ZgJz9RPDTqiFrKcYRpbIVpeTgZ1RL4t5EGTL4YzLAp0bCEpYNBiFpILJkEyETCT5TQKH77rC8FXAOgUZrQaHJSgq5SHwp41grKmb1pd6ZZOFXwoq5aD4Yq5LyE3Qs7yYqCSDkA4CQAwCwAtxqZdwn4QCSDRGNbwApHNIbBxFJ6wA-BgDeBwAYh6AyQsAADcXkz-_gCRSR2ELCKRiATwGR7m2RuRrAMkBRxRpRXkjRRAcAjWAA1KwG0coTDg0KvuvpvpDtvjYnvsUt_ofqGkYWWgEV9JYY1Hiv9Fvh6DvrYhmMXMfgDCKDTqJpZHnOXjZL7KlIQbsNWrtK4eURyGShSjDHoLDEzJ7ECI9hIelC8Z7N8bWLAFQF8W8UCB8SrG8TJIeE8G7GcLtErE8KlJsBcHKusBzBcECBwPMI9izLAGSLWMiRwKifMN1BwH8TiV2DJDJLiH4kzDJGcL4tjBsGcIoITF2LtGjGcDJIsBCSCPKqCeCXJFCRCXLOyRwJyfzMTD8Z7PMFiQKWyRyW7PzESdiRsMjIeOyTqoqkSf8UjO8fSRsMrCMrtKlAKl2CqRsF2L-CMujECDJDLASQaUaSaWafzLLOXi6eXlKYaalMaeSY6RIUrIeP6f6alMSR6caRSeaYaQSWiRsNcRzGaUCMaYqh6alKlMeMmTGV2G8bqVafzEmSmRwGmf8e7N8RsOiTmQKsmamUGYsLrhwIHMaXqRGT2JsOsETFwMaT2B7EjAGQGUGWSNWW2YeB2TwF2D4l2GOeOcydiSGQ6b-COROROcGcTHCT2MacOaOfOcyb6YeIGmyXCWuW7LJOidGVuTuTJHubmcmcmUCFKV2aeXuWjI9mcE-c-VKUqeCYCbCQ7AKmcJeZecSUqU8IHFaRCV-RcG7OidjLtABUBdjOaUrFwBsLCWiVBTCR-Z8cTN2YGa-ahe8ehRIZhUGZqbrvSSqfyqlGcASRIc8JuVqRsKlBwCWarFzBRV2FRYBXaQLHiWid1C8ZhduViZiOjAxbuXWEqWOeKZKVQOXmKXJGCd1EjLWTaaxU8GPsibWPmXWEjD-QLBReRapajFxQSTwF2Xxb2dJQZfiTxSZd2YReZSidxfzCOVsCmS8MydWeRYHIBcrIsOmZmYeECCjBqbCcRf6YsL-D5S8MqaqeCY5cjPmeCaaShbqdFYqtZT2dhclajDFTia6S6VKayUKSKTlblZKdiQVbKSCMFb-cmZOdKYVXKVVdVcyf8bbLiP6TqmWdVZ6RBnjPSbWB7COUeajDLD1eSc8JSXOfOdedibjGNf1bFRudef8bNX1ZSe7FGTSYeCyejG1YeB1RFeVcKXKT5diWKR-YeIFX8XTBwLyTparD5a2bWYOQxXJTxetfCcac0gOR2XJZ8ZNROdNY9e2S9YOX9eueOUtUDc9RsK9bFUNeBWkTdbJHdZ1U1dCa8e8Rdajb-bVWdZjZ8ReTVVKXjUCduaKeKRKbAAAFouyHUQljlfklWYhYl000ndT_XzlSkAm4Vrkbljlc0k2fnOklUqVkis0M3C25UqVU1B6MZEr6IsYI48YqH2Brzk6IiU7bomYHE4Fzq_oHi6kXGOayCs4KbKZmlPAO4G4yBG4Khx5GbxbWaJZXE9I16d4ZY94ETZY-ED7oo14mEL7RSxaO3u2nzHgObJ7eEuZ5ZWYB3tGDFB0JJX7oTjpVE8I-LwH-CP4g6v5Hrv7ESf5dDhT5iXpcTLb_4CTSTJIbZrBHgKI7bHbrAXCIgwEQH5ojKIg4D0D4Dvh5B7pbExKIEqIqAoFghoHfosC3ad2614G8A4gvZ_pOQkGgyGGlrGHQa0F_ZsBBQhRhSBKb3MwMGDpFTRbP6ISKJxQQ5tSaE7QBwpKJw1oZLuTkHUGLFT4ESKHLG4aORw5o6vpIEqC_hDT-ofpAr2EPA3GuTSFr0LGFbv0ZjgbzQJ2g7kYAp2Egr7yVpJbXGVq2aNqe0d594-2ua9wB3M5yb6JhH-iRFwAxFVH1FFSdFwCzC9H9ElHIOITY5rHjEbGTFFwhq7GIToA629p7j-R2T70TxXHV3bF3GQzQyMBUpslMovGYzKOMzEzCykxnDaOkyHh6N6M-xoyHj-xMwbBaN0ykxsxEx2xEz6MvGBCky2O8pMy_gcCMpMW8p2OKxUzeMvGGyGlawizioSyKxPCMqEnIx8qimcroxfnmNExuNxMvGineXMxMyHg4Biyildh6NfkaMJNyxOMszszOO5OywhxaVKhoyFNMU-PaP1Ncy0AiwWNkyJNsoCqUxGPIzGzozVNCzqriy-NyyNMCrNMsytMUztOsozMCrdM2qywazGPaqzWkz0zqOky5MbMvGmpYy4yVUZOMrpQcDsxTO8rWNKweO6M2PMpUnkweMlM2OKxsxMz8r4z6ysynNOPfOuMqr6yuN5MXOpTayEkxPPOM2Ky1OKxJNcl4yilJP4zePbAvFWMxN6OBAZM-OKyVVyz0h7MWpKx7PJMZOYxknEuOouyPC4zmmHOUwlN3PtNAuMr6ODNROYs3OuOBBEyRMKocwqzayvDIsMyilnOIuEuJPwtrMOyGPuNPPIsCrQtfmeNBMKuWN0ypPFO_MspFMkx2PsyxNWruNSsnNysuMjPyrMvQvsxJP0z8qHhF5Utyy7NPl8y-nyx0snMMs6voybNXPTPitstrMPMmuqsuP8t5OWOuP1NkVHP0ttPetlOMoXM6N6vyrfMWsfMesqMSxCwRtsvmudOLM-NHMMxfNptMzONazaspsBv0y6u5sSshtypeNxPyqOMZPUwouvMCtSuvObOimVtZPCvstwtFvcvaxJNJPNseyQvax1OpvpP3MLsezxvdSLO-tcy6xUmKsVuKxdjaz8p2sqzYv8uDOKwsuLsWvLuSubtMvctbt8wSv8oqueNTvHumtituOjN1got0w9vqp9tPPSobuqsis7utsCoCsqx0tmPSTwuOMLsUz1vvODNZsvN8t0zao_tKl2wUUKu-lswuudlyxqM1P8xaWRwoZMYK1FxyOsAPGKNPGyywupR9kQfAvbvbCyx6l8vcdfkmOewJMivRPccLA6zcfjNGucdif2PnOEvceGyslUASu7uccKvMc-NOoijgau1-qpJjiFFdqPyiPeqolG3oA7Ffav2FarocPFpFgU6fxa2K1_yI7L4SDISdajrdap2QLDIyMETZ3IOv78DCjqBFFAA
+	⚠ Please be aware that this chart is not an official demo of Apache ECharts but is made by user-generated code.
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'svg',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  backgroundColor: '#000',
+  tooltip: {
+    formatter: '{a} <br/>{b} : {c}%'
+  },
+  toolbox: {
+    feature: {
+      restore: {},
+      saveAsImage: {}
+    }
+  },
+  series: [
+    // left
+    {
+      name: 'gauge 0',
+      type: 'gauge',
+      min: -200,
+      max: 250,
+      startAngle: -30,
+      endAngle: -315,
+      splitNumber: 9,
+      radius: '35%',
+      center: ['21%', '55%'],
+      axisLine: {
+        lineStyle: {
+          color: [[1, 'red']]
+        }
+      },
+      splitLine: {
+        show: false
+      },
+      axisTick: {
+        show: false
+      },
+      axisLabel: {
+        show: false
+      },
+      anchor: {},
+      pointer: {
+        show: false
+      },
+      detail: {
+        show: false
+      },
+      title: {
+        fontSize: 12,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        color: '#fff',
+        offsetCenter: [0, '-60%']
+      },
+      progress: {
+        show: true,
+        width: 3,
+        itemStyle: {
+          color: '#fff'
+        }
+      },
+      data: [
+        {
+          value: 250,
+          name: 'km/h'
+        }
+      ]
+    },
+    {
+      name: 'gauge 1',
+      type: 'gauge',
+      min: 0,
+      max: 250,
+      startAngle: -140,
+      endAngle: -305,
+      splitNumber: 5,
+      radius: '35%',
+      center: ['21%', '55%'],
+      axisLine: {
+        lineStyle: {
+          color: [[1, '#AE96A6']]
+        }
+      },
+      splitLine: {
+        distance: -7,
+        length: 12,
+        lineStyle: {
+          color: '#fff',
+          width: 4
+        }
+      },
+      axisTick: {
+        distance: -8,
+        length: 8,
+        lineStyle: {
+          color: '#fff',
+          width: 2
+        }
+      },
+      axisLabel: {
+        distance: 14,
+        fontSize: 18,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        color: '#fff'
+      },
+      anchor: {},
+      pointer: {
+        icon: 'path://M-36.5,23.9L-41,4.4c-0.1-0.4-0.4-0.7-0.7-0.7c-0.5-0.1-1.1,0.2-1.2,0.7l-4.5,19.5c0,0.1,0,0.1,0,0.2v92.3c0,0.6,0.4,1,1,1h9c0.6,0,1-0.4,1-1V24.1C-36.5,24-36.5,23.9-36.5,23.9z M-39.5,114.6h-5v-85h5V114.6z',
+        width: 5,
+        length: '40%',
+        offsetCenter: [0, '-58%'],
+        itemStyle: {
+          color: '#f00',
+          shadowColor: 'rgba(255, 0, 0)',
+          shadowBlur: 5,
+          shadowOffsetY: 2
+        }
+      },
+      title: {
+        color: '#fff',
+        fontSize: 14,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        offsetCenter: [0, 0]
+      },
+      detail: {
+        show: false
+      },
+      data: [
+        {
+          value: 0,
+          name: '当前位置：\n \n 中科路'
+        }
+      ]
+    },
+    // middle
+    {
+      name: 'gauge 2',
+      type: 'gauge',
+      min: 0,
+      max: 8,
+      z: 10,
+      startAngle: 210,
+      endAngle: -30,
+      splitNumber: 8,
+      radius: '50%',
+      center: ['50%', '50%'],
+      axisLine: {
+        show: true,
+        lineStyle: {
+          width: 0,
+          color: [
+            [0.825, '#fff'],
+            [1, '#f00']
+          ]
+        }
+      },
+      splitLine: {
+        distance: 20,
+        length: 15,
+        lineStyle: {
+          color: 'auto',
+          width: 4,
+          shadowColor: 'rgba(255, 255, 255, 0.5)',
+          shadowBlur: 15,
+          shadowOffsetY: -10
+        }
+      },
+      axisTick: {
+        distance: 20,
+        length: 8,
+        lineStyle: {
+          color: 'auto',
+          width: 2,
+          shadowColor: 'rgba(255, 255, 255)',
+          shadowBlur: 10,
+          shadowOffsetY: -10
+        }
+      },
+      axisLabel: {
+        distance: 10,
+        fontSize: 35,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        color: '#fff'
+      },
+      anchor: {},
+      pointer: {
+        icon: 'path://M-36.5,23.9L-41,4.4c-0.1-0.4-0.4-0.7-0.7-0.7c-0.5-0.1-1.1,0.2-1.2,0.7l-4.5,19.5c0,0.1,0,0.1,0,0.2v92.3c0,0.6,0.4,1,1,1h9c0.6,0,1-0.4,1-1V24.1C-36.5,24-36.5,23.9-36.5,23.9z M-39.5,114.6h-5v-85h5V114.6z',
+        width: 10,
+        offsetCenter: [0, '-10%'],
+        length: '75%',
+        itemStyle: {
+          color: '#f00',
+          shadowColor: 'rgba(255, 0, 0)',
+          shadowBlur: 5,
+          shadowOffsetY: 3
+        }
+      },
+      title: {
+        color: '#fff',
+        fontSize: 12,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        offsetCenter: [0, '-50%']
+      },
+      data: [
+        {
+          value: 0.6,
+          name: '1/min x 1000'
+        }
+      ],
+      detail: {
+        show: false
+      }
+    },
+    {
+      name: 'gauge 3',
+      type: 'gauge',
+      min: 0,
+      max: 8,
+      z: 10,
+      splitNumber: 8,
+      radius: '50%',
+      axisLine: {
+        lineStyle: {
+          width: 14,
+          color: [[1, '#000']]
+        }
+      },
+      splitLine: {
+        show: false
+      },
+      axisTick: {
+        show: false
+      },
+      axisLabel: {
+        show: false
+      },
+      anchor: {},
+      pointer: {
+        show: false
+      },
+      title: {
+        show: false
+      },
+      detail: {
+        offsetCenter: ['25%', '50%'],
+        formatter: '{a|{value}}{b|km/h}',
+        rich: {
+          a: {
+            fontSize: 60,
+            fontWeight: 800,
+            fontFamily: 'Arial',
+            color: '#fff',
+            align: 'center',
+            padding: [0, 5, 0, 0]
+          },
+          b: {
+            fontSize: 14,
+            fontWeight: 800,
+            fontFamily: 'Arial',
+            color: '#fff',
+            padding: [0, 0, 20, 0]
+          }
+        }
+      },
+      // value is speed
+      data: [
+        {
+          value: 0,
+          name: ''
+        }
+      ]
+    },
+    // right
+    {
+      name: 'gauge 4',
+      type: 'gauge',
+      min: 0,
+      max: 8,
+      startAngle: 135,
+      endAngle: -150,
+      splitNumber: 8,
+      radius: '35%',
+      center: ['79%', '55%'],
+      axisLine: {
+        lineStyle: {
+          color: [[1, '#AE96A6']]
+        }
+      },
+      splitLine: {
+        show: false
+      },
+      axisTick: {
+        show: false
+      },
+      axisLabel: {
+        show: false
+      },
+      anchor: {},
+      pointer: {
+        show: false
+      },
+      title: {},
+      detail: {
+        offsetCenter: ['-15%', 0],
+        formatter: [
+          '{a|                  00:00}',
+          '{a|行驶时间       0:00}{b| h}',
+          '{a|行驶距离        0.0}{b| km}',
+          '{a|平均耗能        ---}{b| 1/100km}',
+          '{a|平均速度        ---}{b| km/h}'
+        ].join('\n'),
+        rich: {
+          a: {
+            fontSize: 14,
+            fontWeight: 800,
+            fontFamily: 'Arial',
+            lineHeight: 22,
+            color: '#fff',
+            align: 'left'
+          },
+          b: {
+            fontWeight: 600,
+            fontFamily: 'Arial',
+            lineHeight: 22,
+            color: '#fff',
+            align: 'left'
+          }
+        }
+      },
+      progress: {
+        show: true,
+        width: 3,
+        itemStyle: {
+          color: '#fff'
+        }
+      },
+      data: [
+        {
+          value: 250,
+          name: ''
+        }
+      ]
+    },
+    {
+      name: 'gauge 5',
+      type: 'gauge',
+      min: 0,
+      max: 1,
+      startAngle: 125,
+      endAngle: 55,
+      splitNumber: 2,
+      radius: '34%',
+      center: ['79%', '55.3%'],
+      axisLine: {
+        lineStyle: {
+          width: 9,
+          color: [
+            [0.15, '#f00'],
+            [1, 'rgba(255, 0, 0, 0)']
+          ]
+        }
+      },
+      splitLine: {
+        distance: -14,
+        length: 16,
+        lineStyle: {
+          color: '#fff',
+          width: 4
+        }
+      },
+      axisTick: {
+        distance: -14,
+        length: 10,
+        lineStyle: {
+          color: '#fff',
+          width: 2
+        }
+      },
+      axisLabel: {
+        distance: 12,
+        fontSize: 18,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        color: '#fff',
+        formatter: function (value) {
+          if (value === 0.5) {
+            return '2/4';
+          }
+          if (value === 1) {
+            return '4/4';
+          }
+          return value + '';
+        }
+      },
+      progress: {
+        show: true,
+        width: 5,
+        itemStyle: {
+          color: '#fff'
+        }
+      },
+      anchor: {
+        show: true,
+        itemStyle: {},
+        offsetCenter: ['-22%', '-57%'],
+        size: 18,
+        icon: 'path://M1.11979167,1.11111112 C1.11979167,0.497461393 1.61725306,0 2.23090279,0 L12.2309028,0 C12.8445525,1.43824153e-08 13.3420139,0.497461403 13.3420139,1.11111112 L13.3420139,10 L15.5642361,10 C16.7915356,10 17.7864583,10.9949228 17.7864583,12.2222222 L17.7864583,16.6666667 C17.7865523,17.28025 18.2839861,17.7776077 18.8975694,17.7776077 C19.5111527,17.7776077 20.0085866,17.28025 20.0086805,16.6666667 L20.0086805,8.88888888 L17.7864583,8.88888888 C17.1728086,8.88888888 16.6753472,8.3914275 16.6753472,7.77777779 L16.6753472,3.79333333 L15.6197917,2.73777777 C15.1859413,2.30392741 15.1859413,1.60051702 15.6197917,1.16666667 L15.6197917,1.16666667 C16.053642,0.732816318 16.7570524,0.732816318 17.1909028,1.16666667 L21.9053472,5.88111112 C22.1140468,6.08922811 22.2312072,6.37193273 22.2309028,6.66666667 L22.2309028,16.6666667 C22.2309028,18.5076158 20.7385186,20 18.8975695,20 C17.0566203,20 15.5642361,18.5076158 15.5642361,16.6666667 L15.5642361,12.2222222 L13.3420139,12.2222222 L13.3420139,17.7777778 L13.3420139,17.7777778 C13.9556636,17.7777778 14.453125,18.2752392 14.453125,18.8888889 L14.453125,18.8888889 C14.453125,19.5025386 13.9556636,20 13.3420139,20 L1.11979165,20 C0.506141934,20 0.00868054688,19.5025386 0.00868054687,18.8888889 L0.00868054687,18.8888889 C0.00868054688,18.2752392 0.506141934,17.7777778 1.11979165,17.7777778 L1.11979167,17.7777778 L1.11979167,1.11111112 Z M3.34201388,2.22222221 L3.34201388,8.88888888 L11.1197917,8.88888888 L11.1197917,2.22222221 L3.34201388,2.22222221 Z'
+      },
+      pointer: {
+        show: false
+      },
+      title: {},
+      detail: {
+        offsetCenter: ['10%', '-56%'],
+        formatter: '{a|831}{b| km}',
+        rich: {
+          a: {
+            fontSize: 15,
+            fontWeight: 800,
+            fontFamily: 'Arial',
+            color: '#fff'
+          },
+          b: {
+            fontWeight: 600,
+            fontFamily: 'Arial',
+            color: '#fff'
+          }
+        }
+      },
+      data: [
+        {
+          value: 0.85,
+          name: ''
+        }
+      ]
+    },
+    {
+      name: 'gauge 6',
+      type: 'gauge',
+      min: -120,
+      max: -60,
+      startAngle: 230,
+      endAngle: 310,
+      clockwise: false,
+      splitNumber: 2,
+      radius: '35%',
+      center: ['79%', '55%'],
+      axisLine: {
+        lineStyle: {
+          color: [
+            [1, '#AE96A6'],
+            [1.1, '#f00']
+          ]
+        }
+      },
+      splitLine: {
+        distance: -8,
+        length: 12,
+        lineStyle: {
+          color: '#fff',
+          width: 4
+        }
+      },
+      axisTick: {
+        splitNumber: 3,
+        length: 8,
+        distance: -8,
+        lineStyle: {
+          color: '#fff',
+          width: 2
+        }
+      },
+      axisLabel: {
+        distance: 14,
+        fontSize: 18,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        color: '#fff',
+        formatter: function (value) {
+          return -value + '';
+        }
+      },
+      anchor: {
+        show: true,
+        itemStyle: {},
+        offsetCenter: [0, '55%'],
+        size: 20,
+        icon: 'path://M-34.1-1.1L-34.1-1.1c0-0.3-0.3-0.6-0.6-0.6h-3.6v-1.5c0-0.5-0.2-0.9-0.6-1.1s-0.9-0.2-1.3,0c-0.4,0.2-0.6,0.7-0.6,1.1V7.9c0,0,0,0.1,0,0.1c-0.8,0.5-1.2,1.5-0.9,2.5c0.3,0.9,1.1,1.6,2.1,1.6c1,0,1.8-0.6,2.1-1.5c0.3-0.9,0-1.9-0.8-2.5V6.3h3.5c0.4,0,0.7-0.3,0.7-0.7l0,0c0-0.4-0.3-0.7-0.7-0.7h-3.5V2.9h3.5c0.4,0,0.7-0.3,0.7-0.7l0,0c0-0.4-0.3-0.7-0.7-0.7h-3.5v-2.1h3.6C-34.4-0.5-34.1-0.8-34.1-1.1z M-44.9,11.6c-0.7,0-1.4-0.2-2-0.6c-0.4-0.3-0.9-0.4-1.4-0.4c-0.4,0-0.9,0.2-1.2,0.4c-0.4,0.2-1.4-0.9-0.9-1.3c0.6-0.4,1.3-0.6,2-0.7c0.8,0,1.5,0.2,2.2,0.5c0.4,0.3,0.9,0.4,1.3,0.4c0.6,0,1.1-0.2,1.5-0.6s1.6,0.7,0.9,1.3S-44,11.6-44.9,11.6L-44.9,11.6z M-34.3,11.6c-0.7,0-1.4-0.3-2-0.7c-0.6-0.4,0.5-1.6,0.9-1.3s0.8,0.4,1.2,0.4c0.5,0,1-0.1,1.4-0.4c0.6-0.3,1.3-0.5,2-0.6h0c0.9,0,1.7,0.3,2.4,0.9c0.7,0.5-0.5,1.6-0.9,1.3c-0.4-0.3-1-0.6-1.5-0.6h0c-0.5,0-0.9,0.2-1.3,0.4c-0.6,0.3-1.3,0.5-2,0.6H-34.3z M-33.5,16.3c-0.7,0-1.4-0.3-1.9-0.8c-0.4-0.3-0.6-0.5-1-0.5c-0.4,0-0.7,0.2-1,0.4c-0.6,0.5-1.3,0.7-2,0.7c-0.7,0-1.4-0.3-1.9-0.8c-0.2-0.3-0.6-0.4-0.9-0.4c-0.4,0-0.7,0.1-1.1,0.5c-0.6,0.5-1.3,0.7-2.1,0.7c-0.7-0.1-1.4-0.4-1.9-0.9c-0.4-0.3-0.6-0.5-1-0.5c-0.3,0-0.6,0.2-0.9,0.4s-1.6-0.7-1.1-1.2c0.5-0.5,1.2-0.8,1.9-0.9c1-0.1,1.6,0.4,2.1,0.8c0.3,0.3,0.6,0.5,1,0.5c0.4,0,0.6-0.1,1-0.4c0.6-0.5,1.4-0.8,2.1-0.8c0.7,0,1.4,0.3,1.9,0.8c0.2,0.2,0.6,0.4,0.9,0.4c0.4,0,0.6-0.1,1-0.4c0.6-0.5,1.3-0.7,2-0.7c0.8,0,1.5,0.3,2,0.9c0.4,0.3,0.6,0.4,0.9,0.4c0.3,0,0.7-0.2,1.1-0.5c0.5-0.4,1.2-0.9,2.3-0.8c0.7,0,1.4,0.3,1.9,0.7c0.5,0.4-0.7,1.5-1,1.3s-0.6-0.4-1-0.4c-0.4,0-0.7,0.2-1.2,0.5C-32,15.9-32.7,16.2-33.5,16.3L-33.5,16.3z'
+      },
+      pointer: {
+        icon: 'path://M2.9,0.7L2.9,0.7c1.4,0,2.6,1.2,2.6,2.6v115c0,1.4-1.2,2.6-2.6,2.6l0,0c-1.4,0-2.6-1.2-2.6-2.6V3.3C0.3,1.9,1.4,0.7,2.9,0.7z',
+        width: 15,
+        length: '4',
+        offsetCenter: [0, '-90%'],
+        itemStyle: {
+          color: '#f00'
+        }
+      },
+      title: {},
+      detail: {
+        show: false
+      },
+      data: [
+        {
+          value: -120,
+          name: ''
+        }
+      ]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

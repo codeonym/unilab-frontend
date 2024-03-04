@@ -38,7 +38,7 @@ function UserBox() {
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1 p-2 shadow bg-base-100 rounded-box w-52 gap-2">
         <li
           className="gap-1 text-lg border-b-2 p-3 border-slate-100 ">
-          {data?.user?.email || data?.user?.username}
+          {data?.user?.name || data?.user?.email}
         </li>
         <li>
           <Link

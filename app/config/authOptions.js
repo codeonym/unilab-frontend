@@ -35,14 +35,15 @@ export const authOptions = {
                     }
 
                     const data = await res.json();
-
                     // Decode the JWT token
                     const decodedToken = jwt.decode(data.token);
-
+                    console.log(decodedToken)
                     // Return user data
                     const user = {
                         id: decodedToken?.id,
                         email: decodedToken?.sub,
+                        name: data?.name,
+                        image: data?.image,
                         role: decodedToken?.role,
                         accessToken: data?.token,
                         refreshToken: data?.refreshToken,
@@ -62,6 +63,8 @@ export const authOptions = {
                 token.id = user.id;
                 token.role = user.role;
                 token.email = user.email;
+                token.name = user.name;
+                token.image = user.image;
                 token.accessToken = user.accessToken;
                 token.refreshToken = user.refreshToken;
             }
@@ -72,6 +75,8 @@ export const authOptions = {
             if (token) {
                 session.user.accessToken = token.accessToken;
                 session.user.id = token.id;
+                session.user.name = token.name;
+                session.user.image = token.image;
                 session.user.role = token.role;
                 session.user.refreshToken = token.refreshToken;
                 session.user.email = token.email;
