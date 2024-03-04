@@ -1,4 +1,4 @@
-cimport {
+import {
     getAllLaboratoriesEndpoint,
     getLaboratoryByIdEndpoint,
     getLaboratoryByNameEndpoint,
